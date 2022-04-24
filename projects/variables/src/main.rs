@@ -1,4 +1,4 @@
-// use std::io;
+use std::io;
 
 fn main() {
     const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
@@ -23,35 +23,35 @@ fn main() {
 
     println!("tup.0 {}, tup.1 {}, tup.2 {}", tup.0, tup.1, tup.2);
 
-    // println!("Please enter an array index.");
+    println!("Please enter an array index.");
 
-    // let mut index = String::new();
+    let mut index = String::new();
 
-    // io::stdin()
-    //     .read_line(&mut index)
-    //     .expect("Failed to read line");
+    io::stdin()
+        .read_line(&mut index)
+        .expect("Failed to read line");
 
-    // let index: usize = index.trim().parse().expect("Enter a valid number");
-    // println!(
-    //     "get_element_in_array(index) at index{}: {}",
-    //     index,
-    //     get_element_in_array(index)
-    // );
+    let index: usize = index.trim().parse().expect("Enter a valid number");
+    println!(
+        "get_element_in_array(index) at index{}: {}",
+        index,
+        get_element_in_array(index)
+    );
 	testing_loop();
 }
 
-// fn get_element_in_array(index: usize) -> i32 {
-//     let array_type_int32_with_five_elements: [i32; 5] = [1, 2, 3, 4, 5];
+fn get_element_in_array(index: usize) -> i32 {
+    let array_type_int32_with_five_elements: [i32; 5] = [1, 2, 3, 4, 5];
 
-//     let element_in_array = array_type_int32_with_five_elements[index];
+    let element_in_array = array_type_int32_with_five_elements[index];
 
-//     println!(
-//         "The value of the element at index {} is {}",
-//         index, element_in_array
-//     );
+    println!(
+        "The value of the element at index {} is {}",
+        index, element_in_array
+    );
 
-//     element_in_array
-// }
+    element_in_array
+}
 
 fn testing_loop() {
 	let mut count = 0;
