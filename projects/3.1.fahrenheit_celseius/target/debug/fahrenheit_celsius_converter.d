@@ -1,0 +1,1 @@
+/Users/gmolin/Desktop/github/rust-playground/projects/3.1.fahrenheit_celseius/target/debug/fahrenheit_celsius_converter: /Users/gmolin/Desktop/github/rust-playground/projects/3.1.fahrenheit_celseius/src/main.rs
