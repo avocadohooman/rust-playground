@@ -1,38 +1,51 @@
-
-struct User { 
-	active: bool,
-	username: String,
-	email: String,
-	sign_in_count: u64,
+#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
 }
 
-struct Color(i32, i32, i32);
-struct Point(i32, i32, i32);
+impl Rectangle { // everything within impl becomes part of the Rectangle struct, kinda like classes/methods
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
 
-struct AlwaysEqual;
+	fn width(&self) -> bool {
+		self.width > 0
+	}
+
+	fn can_hold(&self, other: &Rectangle) -> bool {
+		self.width > other.width && self.height > other.height
+	}
+
+	fn square(size: u32) -> Rectangle {
+		Rectangle {
+			width: size,
+			height: size,
+		}
+	}
+}
 
 fn main() {
-    let mut user1 = build_user(String::from("gerhard@minimumbadas.com"), String::from("gmolin"));
+    let rect1 = Rectangle {
+        width: 30,
+        height: 50,
+    };
+	let rect2 = Rectangle {
+        width: 10,
+        height: 40,
+    };
+    let rect3 = Rectangle {
+        width: 60,
+        height: 45,
+    };
+    println!("Rectangle {:#?}", rect1);
+    println!("area of rect1 {}", rect1.area());
+    if rect1.width() {
+        println!("The rectangle has a nonzero width; it is {}", rect1.width);
+    }
+	println!("Can rect1 hold rect2? {}", rect1.can_hold(&rect2));
+    println!("Can rect1 hold rect3? {}", rect1.can_hold(&rect3));
 
-	let user2 = User {
-		email: String::from("dropaline@gerhardmolin.com"),
-		..user1 // spread similar to typescript
-	};
-
-	let black = Color(0, 0, 0);
-	let origin = Point(0, 0, 0);
-
-	let subject = AlwaysEqual;
-
-
-}
-
-fn build_user(email: String, username: String) -> User {
-	return User {
-		email,
-		username,
-		active: true,
-		sign_in_count: 1,
-
-	}
+	let square = Rectangle::square(30);
+	println!("square {:#?}", square)
 }
