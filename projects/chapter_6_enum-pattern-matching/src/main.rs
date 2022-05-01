@@ -45,6 +45,23 @@ fn main() {
     println!("home {:?}", home);
 
 	println!("Coin worth {}", value_in_cents(Coin::Quarter(UsState::California)));
+
+	let five = Some(5);
+	let six = plus_one(five);
+	let none = plus_one(None);
+
+	let dice_role = 9;
+
+	match dice_role {
+		3 => println!("fancy hat"),
+		7 => println!("remove fancy hat"),
+		_ => reroll(),
+	}
+
+	let config_max = Some(3u8);
+	if let Some(max) = config_max {
+		println!("The maximum is configured to be {}", max);
+	}
 }
 
 fn value_in_cents(coin:Coin) -> u8 {
@@ -58,3 +75,12 @@ fn value_in_cents(coin:Coin) -> u8 {
 		},
 	}
 }
+
+fn plus_one(x: Option<i32>) -> Option<i32> {
+	match x {
+		None => None,
+		Some(i) => Some(i + 1),
+	}
+}
+
+fn reroll() {}
