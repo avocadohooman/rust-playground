@@ -1,3 +1,17 @@
+/*
+	use std::{cmp::Ordering, io};
+	same as
+	use std::cmp::Ordering;
+	use std::io;
+*/
+
+/*
+	same as
+	use std::io;
+	use std::io::Write;
+*/
+use std::io::{self, Write};
+
 mod front_of_house {
 	pub mod hosting {
 		pub fn add_to_waitlist() {}
@@ -44,8 +58,11 @@ mod back_of_house {
 	fn cood_order() {}
 }
 
-// this allows to simply call hosting:: for the eat_at_restaurant fn
-use crate::front_of_house::hosting;
+// this brings Hosting into scope for the eat_at_restaurant fn
+// when applying use, it is a recommended convention to bring the closest parent
+// into scope, instead of a particular child
+// pub use makes this mod also avaialble to external code
+pub use crate::front_of_house::hosting as Hosting;
 
 pub fn eat_at_restaurant() {
 	// Order a breakfast in the sumner with Rye toast
@@ -57,5 +74,5 @@ pub fn eat_at_restaurant() {
     // The next line won't compile if we uncomment it; we're not allowed
     // to see or modify the seasonal fruit that comes with the meal
     // meal.seasonal_fruit = String::from("blueberries");
-	hosting::add_to_waitlist();
+	Hosting::add_to_waitlist();
 }
