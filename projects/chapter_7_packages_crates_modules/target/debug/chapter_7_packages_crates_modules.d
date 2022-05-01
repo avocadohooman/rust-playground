@@ -1,0 +1,1 @@
+/Users/gmolin/Desktop/github/rust-playground/projects/chapter_7_packages_crates_modules/target/debug/chapter_7_packages_crates_modules: /Users/gmolin/Desktop/github/rust-playground/projects/chapter_7_packages_crates_modules/src/main.rs

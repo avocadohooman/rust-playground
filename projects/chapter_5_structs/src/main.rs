@@ -49,3 +49,4 @@ fn main() {
 	let square = Rectangle::square(30);
 	println!("square {:#?}", square)
 }
+ 

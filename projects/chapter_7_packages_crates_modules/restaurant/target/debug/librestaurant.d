@@ -1,0 +1,1 @@
+/Users/gmolin/Desktop/github/rust-playground/projects/chapter_7_packages_crates_modules/restaurant/target/debug/librestaurant.rlib: /Users/gmolin/Desktop/github/rust-playground/projects/chapter_7_packages_crates_modules/restaurant/src/lib.rs
