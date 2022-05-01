@@ -6,27 +6,14 @@
 */
 
 /*
+	use std::io::{self, Write};
 	same as
 	use std::io;
 	use std::io::Write;
 */
-use std::io::{self, Write};
 
-mod front_of_house {
-	pub mod hosting {
-		pub fn add_to_waitlist() {}
-
-		fn seat_at_table() {}
-	}
-
-	mod service {
-		fn take_oder() {}
-
-		fn serve_order() {}
-
-		fn take_payments() {}
- 	}
-}
+mod front_of_house;
+pub use crate::front_of_house::hosting as Hosting;
 
 fn serve_order() {}
 
@@ -62,7 +49,6 @@ mod back_of_house {
 // when applying use, it is a recommended convention to bring the closest parent
 // into scope, instead of a particular child
 // pub use makes this mod also avaialble to external code
-pub use crate::front_of_house::hosting as Hosting;
 
 pub fn eat_at_restaurant() {
 	// Order a breakfast in the sumner with Rye toast
