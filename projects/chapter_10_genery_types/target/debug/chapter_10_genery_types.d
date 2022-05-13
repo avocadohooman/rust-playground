@@ -1,0 +1,1 @@
+/Users/gmolin/Desktop/github/rust-playground/projects/chapter_10_genery_types/target/debug/chapter_10_genery_types: /Users/gmolin/Desktop/github/rust-playground/projects/chapter_10_genery_types/src/lib.rs /Users/gmolin/Desktop/github/rust-playground/projects/chapter_10_genery_types/src/main.rs
